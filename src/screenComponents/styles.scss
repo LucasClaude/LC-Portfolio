@@ -1,5 +1,5 @@
 .screen-container {
-  height: 100vh;
+  height: auto;
   display: grid;
   grid-template-rows: auto auto;
   grid-template-areas:
@@ -10,6 +10,7 @@
     padding: 20px;
     &-content {
       max-width: 1400px;
+      
       display: flex;
       justify-content: space-between;
       align-items: center;

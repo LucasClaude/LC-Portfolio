@@ -2,6 +2,7 @@ import React from "react";
 
 import monitorGraphic from "../../assets/monitor-icons-w-table.svg";
 import { useHomeInfo } from "../../queries/HomeQueries";
+import AnimatedHeader from "../../sharedComponents/AnimatedComponents/AnimatedHeader/AnimatedHeader";
 import "./styles.scss";
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
     <div className="home">
       <div className="home-bio">
         <div className="home-bio-text">
-          <h1>Lucas Claude</h1>
+          <AnimatedHeader text="Lucas Claude"/>
           <h3>Software Engineer</h3>
           {/* <p>Currently a Software Engineer at Haneke Design</p>
           <p>
