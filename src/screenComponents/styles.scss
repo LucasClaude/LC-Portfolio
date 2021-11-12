@@ -12,10 +12,17 @@
       max-width: 1400px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
       margin: auto;
       .lc-logo {
         width: 50px;
         fill: red;
+      }
+    }
+    &-link {
+      margin: 0 10px;
+      &.active {
+        text-decoration: underline;
       }
     }
   }

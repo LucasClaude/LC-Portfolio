@@ -1,22 +1,22 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import LCLogo from "../assets/LC-Logo-Color.svg";
 
 const Header = () => {
   return (
     <div className="header">
-      <div className="header-content">
-        <Link to="/">
+      <nav className="header-content">
+        <NavLink to="/">
           <img className="lc-logo" src={LCLogo} alt="LC" />
-        </Link>
+        </NavLink>
         <div className="header-nav">
           {pages?.map(({ description, link }, index) => (
-            <Link key={index} to={link}>
+            <NavLink  className="header-link" key={index} to={link} >
               {description}
-            </Link>
+            </NavLink>
           ))}
         </div>
-      </div>
+      </nav>
     </div>
   );
 };
