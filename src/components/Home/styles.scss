@@ -1,6 +1,7 @@
 .home {
   width: 100%;
   margin: auto;
+  animation: fadeIn 1s linear;
 
   &-bio {
     padding-bottom: 20px;
@@ -55,5 +56,28 @@
         }
       }
     }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(startYposition);
+  } 
+  100% {
+      opacity: 1;
+      transform: translateY(endYposition);
+  }
+}
+
+@keyframes roundandround {
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
   }
 }
