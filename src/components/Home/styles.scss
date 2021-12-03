@@ -6,43 +6,20 @@
   &-bio {
     padding-bottom: 20px;
     width: 100%;
-    max-width: 1400px;
+    max-width: var(--max-content-width);
     margin: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
-      &-text {
-        text-align: center;
-        z-index: 1;
-      }
-      &-graphic {
-        margin-bottom: -70px;
-        max-width: 90%;
-      }
-  }
 
-  .secondary-content {
-    padding: 20px;
-    background-color: #77abdc;
-    color: white;
+    &-text {
+      text-align: center;
+      z-index: 1;
+    }
 
-    .technologies {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 1400px;
-      &-cards {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        margin: 10px;
-        width: clamp(300px, calc(33% - 60px), 100%);
-        border-radius: 12px;
-        box-shadow: 0 5px 5px 0 rgba(233, 240, 243, 0.5), 0 0 0 1px #e6ecf8;
-        background-color: white;
-        color: #4666ab;
-      }
+    &-graphic {
+      margin-bottom: -70px;
+      max-width: 90%;
     }
   }
 }
@@ -61,12 +38,13 @@
 
 @keyframes fadeIn {
   0% {
-      opacity: 0;
-      transform: translateY(startYposition);
-  } 
+    opacity: 0;
+    transform: translateY(startYposition);
+  }
+
   100% {
-      opacity: 1;
-      transform: translateY(endYposition);
+    opacity: 1;
+    transform: translateY(endYposition);
   }
 }
 

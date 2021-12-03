@@ -1,0 +1,9 @@
+.about-me {
+  padding: 20px;
+  background-color: var(--light-blue);
+  color: white;
+  &-content {
+    max-width: var(--max-content-width);
+    padding: var(--content-padding);
+  }
+}

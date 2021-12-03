@@ -3,9 +3,10 @@ import "./styles.scss";
 
 type AnimateHeaderProps = {
   text: string;
+  delay: number
 };
 
-const AnimatedHeader = ({ text }: AnimateHeaderProps) => {
+const AnimatedHeader = ({ text, delay }: AnimateHeaderProps) => {
   const [opacity, setOpacity] = useState(0);
   const seperatedTitle: string[] = text?.split("");
 
@@ -20,8 +21,8 @@ const AnimatedHeader = ({ text }: AnimateHeaderProps) => {
           className="animated-header-letter"
           key={index}
           style={{
-            animationDelay: `${(index + 2) * 0.1}s`,
-            transitionDelay: `${(index + 1) * 0.1}s`,
+            animationDelay: `${delay + (index + 2) * 0.1}s`,
+            transitionDelay: `${delay + (index + 1) * 0.1}s`,
             opacity,
           }}
         >

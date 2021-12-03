@@ -4,6 +4,9 @@ import monitorGraphic from "../../assets/monitor-icons-w-table.svg";
 import { useHomeInfo } from "../../queries/HomeQueries";
 import AnimatedCards from "../../sharedComponents/AnimatedComponents/AnimatedCards/AnimatedCards";
 import AnimatedHeader from "../../sharedComponents/AnimatedComponents/AnimatedHeader/AnimatedHeader";
+import AnimatedTitle from "../../sharedComponents/AnimatedComponents/AnimatedTitle/AnimatedTitle";
+import About from "../About/About";
+import Experience from "../Experience/Experience";
 import { skills } from "./Skills";
 import "./styles.scss";
 
@@ -13,8 +16,8 @@ const Home = () => {
     <div className="home">
       <div className="home-bio">
         <div className="home-bio-text">
-          <AnimatedHeader text="Lucas Claude" />
-          <h3>Software Engineer</h3>
+          <AnimatedHeader text="Lucas Claude" delay={0.5}/>
+          <AnimatedTitle text="Software Engineer" delay={2.2}/>
           {/* <p>Currently a Software Engineer at Haneke Design</p>
           <p>
             Florida Southern College Bachelors of Science - Computer Science
@@ -26,12 +29,8 @@ const Home = () => {
           alt="monitor-graphic"
         />
       </div>
-      <div className="secondary-content">
-        <div className="container">
-          <h2>Technologies &amp; Tools</h2>
-          <AnimatedCards cards={skills}/>
-        </div>
-      </div>
+      <About />
+      <Experience />
     </div>
   );
 };

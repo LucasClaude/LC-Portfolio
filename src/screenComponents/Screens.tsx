@@ -4,7 +4,6 @@ import Home from "../components/Home/Home";
 import About from "../components/About/About";
 
 const Screens = () => {
-  console.log('here');
   return (
     <div className="content">
       <Routes>

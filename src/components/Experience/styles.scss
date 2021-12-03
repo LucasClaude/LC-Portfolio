@@ -1,0 +1,7 @@
+.experience {
+  padding: 20px;
+  &-content {
+    max-width: var(--max-content-width);
+    padding: var(--content-padding);
+  }
+}
