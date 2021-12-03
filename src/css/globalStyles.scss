@@ -1,4 +1,18 @@
-$lc-color: #4666ab;
+:root {
+  --max-content-width: 1400px;
+  --header-height: 100px;
+  --header-scroll-height: 75px;
+  --sidebar-width: 100px;
+  --content-padding: 0 100px;
+  --link-color: #4666ab;
+
+  --light-blue: #77abdc;
+  --lc-color: #4666ab;
+
+
+  --opening-transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
 
 body {
   font-family: europa, sans-serif;
@@ -23,12 +37,13 @@ h3 {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: var(--max-content-width);
+  padding: var(--content-padding);
   margin: auto;
 }
 
 a {
-  color: $lc-color;
+  color: var(--link-color);
   font-weight: bold;
   text-decoration: none;
   &:hover {

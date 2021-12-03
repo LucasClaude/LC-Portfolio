@@ -1,21 +1,55 @@
-import { NavLink } from "react-router-dom";
+import clsx from "clsx";
+import { useEffect, useState } from "react";
+import { HashLink as Link } from 'react-router-hash-link';
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import LCLogo from "../assets/LC-Logo-Color.svg";
+import useScrollDirection from "../components/hooks/useScrollDirection";
 
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+  const scrollDirection = useScrollDirection({ thresholdPixels: 0 });
+
+  useEffect(() => {
+    setOpen(true);
+
+    const pageScroll = () => {
+      setScrolledToTop(window.pageYOffset < 25);
+    };
+
+    window.addEventListener("scroll", pageScroll);
+
+    return () => {
+      window.removeEventListener("scroll", pageScroll);
+    };
+  }, []);
+
   return (
-    <div className="header">
+    <div className={clsx("header", `header-${scrolledToTop ? 'top' :  scrollDirection || 'top'}`)}>
       <nav className="header-content">
-        <NavLink to="/">
+        <Link to="/" smooth>
           <img className="lc-logo" src={LCLogo} alt="LC" />
-        </NavLink>
-        <div className="header-nav">
-          {pages?.map(({ description, link }, index) => (
-            <NavLink  className="header-link" key={index} to={link} >
-              {description}
-            </NavLink>
-          ))}
-        </div>
+        </Link>
+        <ol className="header-nav">
+          <TransitionGroup component={null}>
+            {pages?.map(
+              ({ description, link }, index) =>
+                open && (
+                  <CSSTransition in={open} timeout={2000} classNames="fadedown">
+                    <li
+                      className="header-nav-link"
+                      style={{ transitionDelay: `${index * 300}ms` }}
+                    >
+                      <Link key={index} to={link} smooth>
+                        {description}
+                      </Link>
+                    </li>
+                  </CSSTransition>
+                )
+            )}
+          </TransitionGroup>
+        </ol>
       </nav>
     </div>
   );
@@ -24,7 +58,7 @@ const Header = () => {
 export default Header;
 
 const pages = [
-  { description: "Home", link: "/" },
-  { description: "About", link: "about" },
-  { description: "Projects", link: "projects" },
+  { description: "About", link: "#about" },
+  { description: "Experience", link: "#experience" },
+  { description: "Projects", link: "#projects" },
 ];
