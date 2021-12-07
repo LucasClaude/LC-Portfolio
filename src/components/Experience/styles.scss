@@ -1,7 +1,10 @@
 .experience {
+  display: flex;
+  justify-content: center;
   padding: 20px;
   &-content {
     max-width: var(--max-content-width);
     padding: var(--content-padding);
+    width: 100%;
   }
 }

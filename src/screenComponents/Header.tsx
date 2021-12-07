@@ -4,7 +4,8 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import LCLogo from "../assets/LC-Logo-Color.svg";
-import useScrollDirection from "../components/hooks/useScrollDirection";
+import useScrollDirection from "../hooks/useScrollDirection";
+import { DarkModeToggle } from "./DarkModeToggle/DarkModeToggle";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -51,6 +52,7 @@ const Header = () => {
           </TransitionGroup>
         </ol>
       </nav>
+      <DarkModeToggle />
     </div>
   );
 };
