@@ -5,13 +5,13 @@ import "./styles.scss";
 const About = () => {
   return (
     <SectionWrapper delay={2200}>
-      <div className="about-me" id="about">
+      <div className="about-me">
         <img
           className="about-me-graphic"
           src={monitorGraphic}
           alt="monitor-graphic"
         />
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex' }} id="about">
           <div className="about-me-content">
             <h2>1. About Me.</h2>
             <p>
