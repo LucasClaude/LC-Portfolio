@@ -1,7 +1,9 @@
 .about-me {
   padding: 20px;
   color: white;
+  margin: auto;
   max-width: var(--max-content-width);
+  padding: var(--content-padding);
 
   h2 {
     color: white;
@@ -17,11 +19,9 @@
     z-index: 1;
     position: relative;
   }
-  
+
   &-content {
     background-color: var(--light-blue);
-    max-width: var(--max-content-width);
-    margin: var(--content-padding);
     padding: 20px;
     border-radius: 20px;
     width: 100%;
