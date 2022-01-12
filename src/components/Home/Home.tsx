@@ -6,6 +6,8 @@ import AnimatedHeader from "../../sharedComponents/AnimatedComponents/AnimatedHe
 import AnimatedTitle from "../../sharedComponents/AnimatedComponents/AnimatedTitle/AnimatedTitle";
 import About from "../About/About";
 import Experience from "../Experience/Experience";
+import Projects from "../Projects/Projects";
+
 import "./styles.scss";
 
 const Home = () => {
@@ -26,6 +28,7 @@ const Home = () => {
       </SectionWrapper>
       <About />
       <Experience />
+      <Projects />
     </div>
   );
 };

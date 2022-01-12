@@ -1,12 +1,33 @@
+@import 'src/css/screenMixins';
+
 .about-me {
-  padding: 20px;
   color: white;
   margin: auto;
-  max-width: var(--max-content-width);
+  max-width: 1200px;
   padding: var(--content-padding);
+  position: relative;
+  margin-bottom: 60px;
+
+  &:after {
+    content: "React JS, TypeScript, Next JS, Unity (c#), React Native, Angular, Node.js";
+    position: absolute;
+    bottom: -25px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    left: 0;
+    right: 0;
+    font-size: clamp(14px, 1vw, 16px);
+    max-width: 100%;
+    @include for-tablet {
+      bottom: -48px;
+      content: "React JS, TypeScript, Next JS, Unity (c#),\A React Native, Angular, Node.js";
+      white-space: pre-wrap;
+    }
+  }
 
   h2 {
-    color: white;
     position: relative;
     z-index: 2;
   }
@@ -21,9 +42,54 @@
   }
 
   &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     background-color: var(--light-blue);
-    padding: 20px;
+    padding: 20px 40px 30px 40px;
+    width: calc(100% - 80px);
+    position: relative;
+    overflow: visible;
     border-radius: 20px;
-    width: 100%;
+    margin-bottom: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: 0;
+      top: 31px;
+      background-color: var(--lc-color);
+      transform: skew(15deg);
+      border-radius: 20px;
+      z-index: -1;
+      @include for-tablet {
+        top: 62px;
+        white-space: pre;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      right: 0;
+      top: 31px;
+      background-color: var(--lc-color);
+      transform: skew(-15deg);
+      border-radius: 20px;
+      z-index: -1;
+      @include for-tablet {
+        top: 62px;
+      }
+    }
+
+    &-info {
+      z-index: 2;
+      color: var(--body-text-color);
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
 import { MainContext } from "../../context/MainContext";
+import { ToggleButton } from "./ToggleButton";
 
 export const DarkModeToggle = () => {
   const {
@@ -8,7 +9,7 @@ export const DarkModeToggle = () => {
     dispatch,
   } = useContext(MainContext);
 
-  const isDark = theme ? theme === "dark" ? true : false : undefined;
+  const isDark = theme ? (theme === "dark" ? true : false) : undefined;
 
   const systemPrefersDark = useMediaQuery(
     {
@@ -25,12 +26,12 @@ export const DarkModeToggle = () => {
     });
   };
 
-    useEffect(() => {
-    if (systemPrefersDark)  {
+  useEffect(() => {
+    if (systemPrefersDark && !theme) {
+      console.log("jere");
       setTheme(true);
     }
-  },[systemPrefersDark]);
-
+  }, [systemPrefersDark]);
 
   const value = useMemo(
     () => (isDark === undefined ? !!systemPrefersDark : isDark),
@@ -46,8 +47,11 @@ export const DarkModeToggle = () => {
   }, [value]);
 
   return (
-    <button className="toggle-button" onClick={() => setTheme(!isDark)}>
-      {isDark ? "Light" : "Dark"} Mode
-    </button>
+    <>
+      <ToggleButton
+        onClick={() => setTheme(!isDark)}
+        currentTheme={isDark ? "dark" : "light"}
+      />
+    </>
   );
 };

@@ -37,7 +37,7 @@ const Header = () => {
             {pages?.map(
               ({ description, link }, index) =>
                 open && (
-                  <CSSTransition in={open} timeout={2000} classNames="fadedown">
+                  <CSSTransition in={open} timeout={2000} classNames="fadedown" key={index}>
                     <li
                       className="header-nav-link"
                       style={{ transitionDelay: `${index * 300}ms` }}
@@ -63,4 +63,5 @@ const pages = [
   { description: "About", link: "#about" },
   { description: "Experience", link: "#experience" },
   { description: "Projects", link: "#projects" },
+  { description: "Contact", link: "#contact" },
 ];

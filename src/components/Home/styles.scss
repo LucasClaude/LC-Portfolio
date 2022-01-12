@@ -19,18 +19,6 @@
   }
 }
 
-@media (max-width: 760px) {
-  .home {
-    .secondary-content {
-      .technologies {
-        &-cards {
-          min-width: 90%;
-        }
-      }
-    }
-  }
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;

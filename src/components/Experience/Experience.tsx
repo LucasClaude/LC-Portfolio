@@ -14,6 +14,7 @@ const Experience = () => {
             <div className="experiences-list">
               {experienceList?.map(({ title }, index) => (
                 <button
+                  key={index}
                   className={clsx("experiences-list-item", {
                     "experiences-list-item-active":
                       index === selectedExperience,
@@ -39,8 +40,7 @@ export default Experience;
 const experienceList = [
   {
     title: "Haneke Design",
-    description:
-      `SOFTWARE ENGINEER - HANEKE DESIGN JUNE 2018 – PRESENT
+    description: `SOFTWARE ENGINEER - HANEKE DESIGN JUNE 2018 – PRESENT
       FRANKCRUM HR PORTAL REACT JS WEB APPLICATION, HANEKE DESIGN
       • This project was built with: React Js, React Hooks, React Router, Redux, Redux Form, HTML, sass and more.
       • I have been the lead developer on this large HR Portal Web App for over two years. This project includes the Employee and Employer side of HR and is used by over 30,000 users. I have been the primary and sole developer on this project for well over a year.

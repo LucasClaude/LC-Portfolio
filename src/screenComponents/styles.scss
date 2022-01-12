@@ -12,6 +12,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 1;
 
     &-links {
       display: flex;
@@ -24,11 +25,20 @@
       border-radius: 0 20px 0 0;
       list-style: none;
 
-      .link {
+      .sidebar-link {
         margin-bottom: 20px;
+
+        &:hover {
+          cursor: pointer;
+        }
 
         a {
           color: var(--link-color);
+        }
+
+        svg {
+          width: 45px;
+          height: 45px;
         }
 
         &:first-of-type {
@@ -40,8 +50,8 @@
         }
       }
 
-      &:after,
-      &:before {
+      &::after,
+      &::before {
         content: "";
         display: block;
         width: 1px;
@@ -49,11 +59,11 @@
 
       }
 
-      &:before {
+      &::before {
         height: 50px;
       }
 
-      &:after {
+      &::after {
         height: 90px;
         background-color: var(--link-color);
       }
@@ -103,6 +113,10 @@
           }
         }
       }
+    }
+
+    .toggle-button {
+      margin-right: 10px;
     }
   }
 
