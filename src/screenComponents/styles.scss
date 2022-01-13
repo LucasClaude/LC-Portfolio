@@ -1,3 +1,5 @@
+@import 'src/css/screenMixins';
+
 .screen-container {
   background-color: var(--primary-color);
   height: auto;
@@ -101,6 +103,9 @@
 
     &-nav {
       display: flex;
+      @include for-tablet {
+        opacity: 0;
+      }
 
       &-link {
         margin: 0 20px;
@@ -117,6 +122,17 @@
 
     .toggle-button {
       margin-right: 10px;
+      @include for-tablet {
+        opacity: 0;
+      }
+    }
+
+    .mobile-menu-icon {
+      width: 35px;
+      opacity: 0;
+      @include for-tablet {
+        opacity: 1;
+      }
     }
   }
 

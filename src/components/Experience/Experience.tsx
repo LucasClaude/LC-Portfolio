@@ -25,9 +25,9 @@ const Experience = () => {
                 </button>
               ))}
             </div>
-            <p className="experiences-description">
+            <div className="experiences-description">
               {experienceList[selectedExperience]?.description}
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -40,31 +40,74 @@ export default Experience;
 const experienceList = [
   {
     title: "Haneke Design",
-    description: `SOFTWARE ENGINEER - HANEKE DESIGN JUNE 2018 – PRESENT
-      FRANKCRUM HR PORTAL REACT JS WEB APPLICATION, HANEKE DESIGN
-      • This project was built with: React Js, React Hooks, React Router, Redux, Redux Form, HTML, sass and more.
-      • I have been the lead developer on this large HR Portal Web App for over two years. This project includes the Employee and Employer side of HR and is used by over 30,000 users. I have been the primary and sole developer on this project for well over a year.
-      • Throughout this project I have worked directly with the client (FrankCrum) and have been exposed to the entire software engineering process.
-      • I have also had some design input throughout the project.
-      JANUARY 2020 – PRESENT
-      CURA FREIGHT REACT JS WEB APPLICATION, HANEKE DESIGN
-      • This project was built with: React JS, React Hooks, GraphQL (Apollo Client).
-      • Lead developer for the project, leading and guiding other developers to complete this
-      application for our client.
-      • Have been in constant contact with the client and internal design team to develop
-      this application.
-      OTHER PROJECTS & EXPERIENCE, HANEKE DESIGN
-      • BayCare HealthNav Web Application Maintenance – React JS
-      • Berkeley Prep Virtual Art Gallery – Lead Developer - Unity 3D & Unity Virtual Reality
-      • Moffitt Cancer Center – Unity Augmented Reality Application
-      • GitHub, Continuous integration tools (Circle CI), S3, Pivotal Tracker, Clubhouse, Jest &
-      Enzyme & more.`,
+    description: (
+      <>
+        <h4>SOFTWARE ENGINEER - HANEKE DESIGN - JUNE 2018 - PRESENT</h4>
+        <h5>FRANKCRUM HR PORTAL</h5>
+        <ul>
+          <li>
+            This project was built with: React Js, React Hooks, React Router,
+            Redux, Redux Form, HTML, sass and more.
+          </li>
+          <li>
+            I have been the lead developer on this large HR Portal Web App for
+            over two years. This project includes the Employee and Employer side
+            of HR and is used by over 30,000 users. I have been the primary and
+            sole developer on this project for well over a year.
+          </li>
+          <li>
+            Throughout this project I have worked directly with the client
+            (FrankCrum) and have been exposed to the entire software engineering
+            process.
+          </li>
+          <li>I have also had some design input throughout the project.</li>
+        </ul>
+        <h5>CURA FREIGHT PORTAL</h5>
+        <ul>
+          <li>
+            This project was built with: React JS, React Hooks, GraphQL (Apollo
+            Client).
+          </li>
+          <li>
+            Lead developer for the project, leading and guiding other developers
+            to complete this application for our client.
+          </li>
+          <li>
+            Have been in constant contact with the client and internal design
+            team to develop this application.
+          </li>
+          <li>I have also had some design input throughout the project.</li>
+        </ul>
+        <h5>OTHER PROJECTS &amp; EXPERIENCE</h5>
+        <ul>
+          <li>BayCare HealthNav Web Application Maintenance - React JS</li>
+          <li>
+            Berkeley Prep Virtual Art Gallery - Lead Developer - Unity 3D &amp;
+            Unity Virtual Reality
+          </li>
+          <li>Moffitt Cancer Center - Unity Augmented Reality Application</li>
+          <li>
+            GitHub, Continuous integration tools (Circle CI), S3, Pivotal
+            Tracker, Clubhouse, Jest &amp; Enzyme &amp; more.
+          </li>
+        </ul>
+      </>
+    ),
   },
   {
     title: "Pan-American Lacrosse Association",
-    description: `MEDIA/WEB DEVELOPER - PAN-AMERICAN LACROSSE ASSOCIATION SEPTEMBER 2018 – PRESENT
-    • PANAMERICANLACROSSE.ORG – Designed and Developed the website for the Pan-American Lacrosse Association (React JS, Photoshop).
-    • PALA.LACROSSE (INSTAGRAM) – Manage and Design logos and other media for various tournament and events (Photoshop)`,
+    description: (
+      <>
+        <h4>
+          MEDIA/WEB DEVELOPER - PAN-AMERICAN LACROSSE ASSOCIATION - SEPTEMBER 2018
+          - PRESENT
+        </h4>
+        <p>
+          panamericanlacrosse.org - Designed and Developed the website for the
+          Pan-American Lacrosse Association (React JS, Vercel, Illustrator, Photoshop).
+        </p>
+      </>
+    ),
   },
   {
     title: "Florida Southern College",

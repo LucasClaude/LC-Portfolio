@@ -1,0 +1,31 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+
+  &-content {
+    max-width: var(--max-content-width);
+    padding: var(--content-padding);
+    width: 100%;
+
+    &-icons {
+      display: flex;
+
+      .contact-icon {
+        stroke: var(--body-text-color);
+        fill: var(--body-text-color);
+        height: 75px;
+
+        &:hover {
+          fill: var(--tertiary-color) !important;
+          transition: ease 0.5s !important;
+        }
+
+        &.mail-icon {
+          fill: var(--primary-color);
+        }
+
+      }
+    }
+  }
+}

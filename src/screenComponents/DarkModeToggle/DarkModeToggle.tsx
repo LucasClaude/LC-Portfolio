@@ -28,7 +28,6 @@ export const DarkModeToggle = () => {
 
   useEffect(() => {
     if (systemPrefersDark && !theme) {
-      console.log("jere");
       setTheme(true);
     }
   }, [systemPrefersDark]);
@@ -47,11 +46,9 @@ export const DarkModeToggle = () => {
   }, [value]);
 
   return (
-    <>
-      <ToggleButton
-        onClick={() => setTheme(!isDark)}
-        currentTheme={isDark ? "dark" : "light"}
-      />
-    </>
+    <ToggleButton
+      onClick={() => setTheme(!isDark)}
+      currentTheme={isDark ? "dark" : "light"}
+    />
   );
 };

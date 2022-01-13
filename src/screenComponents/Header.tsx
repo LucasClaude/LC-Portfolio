@@ -1,11 +1,12 @@
 import clsx from "clsx";
 import { useEffect, useState } from "react";
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink as Link } from "react-router-hash-link";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 import LCLogo from "../assets/LC-Logo-Color.svg";
 import useScrollDirection from "../hooks/useScrollDirection";
 import { DarkModeToggle } from "./DarkModeToggle/DarkModeToggle";
+import { MobielMenuIcon } from "./SVG";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -27,7 +28,12 @@ const Header = () => {
   }, []);
 
   return (
-    <div className={clsx("header", `header-${scrolledToTop ? 'top' :  scrollDirection || 'top'}`)}>
+    <div
+      className={clsx(
+        "header",
+        `header-${scrolledToTop ? "top" : scrollDirection || "top"}`
+      )}
+    >
       <nav className="header-content">
         <Link to="/" smooth>
           <img className="lc-logo" src={LCLogo} alt="LC" />
@@ -37,7 +43,12 @@ const Header = () => {
             {pages?.map(
               ({ description, link }, index) =>
                 open && (
-                  <CSSTransition in={open} timeout={2000} classNames="fadedown" key={index}>
+                  <CSSTransition
+                    in={open}
+                    timeout={2000}
+                    classNames="fadedown"
+                    key={index}
+                  >
                     <li
                       className="header-nav-link"
                       style={{ transitionDelay: `${index * 300}ms` }}
@@ -53,6 +64,7 @@ const Header = () => {
         </ol>
       </nav>
       <DarkModeToggle />
+      <button><MobielMenuIcon className="mobile-menu-icon" fill="white" /></button>
     </div>
   );
 };
