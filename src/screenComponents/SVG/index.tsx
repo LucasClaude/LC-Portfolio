@@ -1,0 +1,1 @@
+export { ReactComponent as MobileMenuIcon } from './MobileMenuIcon.svg';

@@ -68,6 +68,11 @@
       @include for-tablet {
         top: 62px;
         white-space: pre;
+        left: 30px;
+        transform: skew(5deg);
+      }
+      @include for-mobile {
+        display: none;
       }
     }
 
@@ -84,6 +89,11 @@
       z-index: -1;
       @include for-tablet {
         top: 62px;
+        right: 30px;
+        transform: skew(-5deg);
+      }
+      @include for-mobile {
+        display: none;
       }
     }
 

@@ -6,7 +6,7 @@ import './styles.scss';
 
 const ScreenContainer = () => {
   return (
-    <div className="screen-container light">
+    <div className="screen-container">
       <Header />
       <LeftSidebar />
       <Screens />

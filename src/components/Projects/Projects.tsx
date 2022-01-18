@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import SectionWrapper from "../../sharedComponents/SectionWrapper/SectionWrapper";
 import "./styles.scss";
 
@@ -6,11 +5,6 @@ import panAmerican from "./projectImages/panAmerican3.png";
 import darkMode from "./projectImages/DarkMode.png";
 import portfolio from "./projectImages/portfolio.png";
 import { AnimatedButton } from "../../sharedComponents/AnimatedComponents/AnimatedButton/AnimatedButton";
-
-type BackgroundType = {
-  title: string;
-  background: string;
-};
 
 const Projects = () => {
   return (
@@ -20,13 +14,16 @@ const Projects = () => {
           <h2>3. Projects.</h2>
           <div className="project-list">
             {projectList?.map(
-              ({ image, description, title, renderHTML }, index) => (
-                <div className="project-list-item">
+              ({ image, title, renderHTML }, index) => (
+                <div className="project-list-item" key={index}>
                   {image && (
-                    <Background background={`url(${image})`} title={title} />
+                    // <Background background={`url(${image})`} title={title} />
+                    <div className="project-image">
+                      <img className="project-list-item-image" src={image} alt={title}/>
+                    </div>
                   )}
                   {renderHTML && (
-                    <div className="project-list-renderedHTML">
+                    <div className="project-list-info">
                       {renderHTML}
                     </div>
                   )}
@@ -41,20 +38,6 @@ const Projects = () => {
 };
 
 export default Projects;
-
-const Background = styled.div<BackgroundType>`
-  &:before {
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    background-image: ${(props) => props.background};
-    opacity: 0.4;
-    background-size: cover;
-    background-position: top center;
-    z-index: 0;
-  }
-`;
 
 const projectList = [
   {
@@ -83,7 +66,7 @@ const projectList = [
     image: portfolio,
     renderHTML: (
       <>
-        <h3>My Porfolio</h3>
+        <h3>My Portfolio</h3>
         <p>
           Check out the code to the current site you're looking at below. I used
           React, typescript, custom hooks, animations, and more.
@@ -103,12 +86,13 @@ const projectList = [
       <>
         <h3>Dark/Light Mode Toggle</h3>
         <p>
-          Custom made svg's using adobe illustrator. Check out my Gist in the
-          link below for the code (also included in this project).
+          NPM Package I developed for react applications. Custom made svg's
+          using adobe illustrator. Check out the documentation for the package
+          below (also included in this project).
         </p>
         <AnimatedButton
-          text="Go to Gist"
-          link="https://gist.github.com/LucasClaude/bad14d907ca5a003d858095979038f1c"
+          text="View on NPM"
+          link="https://www.npmjs.com/package/use-dark-mode-toggle"
         />
       </>
     ),

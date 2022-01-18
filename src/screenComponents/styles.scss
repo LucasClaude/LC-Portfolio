@@ -1,3 +1,5 @@
+@import 'src/css/screenMixins';
+
 .screen-container {
   background-color: var(--primary-color);
   height: auto;
@@ -13,6 +15,10 @@
     bottom: 0;
     left: 0;
     z-index: 1;
+
+    @include for-tablet {
+      display: none;
+    }
 
     &-links {
       display: flex;
@@ -76,26 +82,57 @@
     grid-area: header;
     width: 100%;
     z-index: 2;
-    transition: var(--opening-transition);
     opacity: 0.9;
     background-color: var(--primary-color);
     color: white;
+
+    @include for-tablet {
+      max-width: 100vw;
+      opacity: 1;
+      padding-left: 0;
+    }
+
+    &-mobile {
+      @include for-tablet {
+        height: 100%;
+        position: fixed;
+        align-items: flex-start;
+        background-color: var(--primary-color-transparent);
+
+        .header-content {
+          margin: 0;
+        }
+      }
+    }
 
     &-content {
       max-width: var(--max-content-width);
       padding: var(--content-padding);
       width: 100%;
       padding: 0 20px;
-      justify-content: space-between;
-
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: auto;
+      position: relative;
+      overflow: hidden;
+
+      @include for-tablet {
+        padding: 0;
+
+        a {
+          margin-top: 5px;
+          align-self: flex-start;
+        }
+      }
 
       .lc-logo {
         width: 50px;
-        fill: red;
+
+        @include for-tablet {
+          margin-top: 5px;
+          margin-left: 20px;
+        }
       }
     }
 
@@ -104,7 +141,6 @@
 
       &-link {
         margin: 0 20px;
-        transition: var(--opening-transition);
 
         &.active {
           a {
@@ -113,16 +149,80 @@
           }
         }
       }
+
+      @include for-tablet {
+        transform: translateX(100vw);
+        visibility: hidden;
+        width: 0;
+      }
+
+      &-mobile-open {
+        display: flex;
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+        transform: translateX(0vw);
+        visibility: visible;
+        transition: var(--opening-transition);
+        box-shadow: -10px 0px 30px -15px var(--primary-color);
+
+        @include for-tablet {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--lc-color);
+          width: clamp(100px, 100%, 400px);
+          min-height: 100vh;
+          padding: 0;
+          margin: 0;
+
+
+          .header-nav-link {
+            font-size: 20px;
+            margin: 20px 0;
+
+            a {
+              color: white;
+            }
+          }
+        }
+      }
     }
 
     .toggle-button {
       margin-right: 10px;
+
+      @include for-tablet {
+        display: none;
+      }
+    }
+
+    .mobile-menu-button {
+      position: absolute;
+      right: 15px;
+      top: 25px;
+
+      &-icon {
+        width: 35px;
+        opacity: 0;
+        fill: var(--body-text-color);
+
+        @include for-tablet {
+          opacity: 1;
+        }
+      }
     }
   }
 
   .content {
     grid-area: content;
     width: 100%;
+
+    @include for-tablet {
+      width: calc(100% - 40px);
+      padding: 0 20px
+    }
   }
 }
 
