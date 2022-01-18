@@ -1,0 +1,113 @@
+@import "src/css/screenMixins.scss";
+
+.projects {
+  display: flex;
+  justify-content: center;
+  min-height: 350px;
+  margin: 20px 0;
+
+  &-content {
+    max-width: var(--max-content-width);
+    padding: var(--content-padding);
+    width: 100%;
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+
+      &-description {
+        position: absolute;
+        color: white;
+        top: 50%;
+        z-index: 2;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        padding: 0;
+        width: 100%;
+        color: white;
+        transition: color .5s;
+        overflow: hidden;
+
+        h3 {
+          color: white;
+        }
+
+        @include for-tablet {
+          width: 100%;
+        }
+
+        &:nth-child(odd) {
+          .project-list-info {
+            order: -1;
+            margin-left: 0;
+            margin-right: -50px;
+          }
+        }
+
+        .project-image {
+          position: relative;
+          height: 300px;
+          width: 50%;
+          background-color: var(--lc-color);
+          border-radius: 8px;
+
+          img {
+            border-radius: inherit;
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            margin: 0;
+            max-width: none;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            width: 100%;
+            object-fit: cover;
+            mix-blend-mode: multiply;
+            filter: grayscale(100%) contrast(1) brightness(90%);
+          }
+
+          @include for-tablet {
+            position: absolute;
+            width: 100%;
+          }
+        }
+      }
+
+      &-info {
+        z-index: 2;
+        color: white;
+        width: 50%;
+        padding: 20px 0;
+        transition-delay: 0.2s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: var(--lc-color);
+        margin-left: -50px;
+        border-radius: 3px;
+        p {
+          padding: 10px 20px;
+        }
+        @include for-tablet {
+          width: 100%;
+          height: 300px;
+          margin: 0;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 0;
+          background-color: var(--lc-color-transparent);
+        }
+      }
+    }
+  }
+}

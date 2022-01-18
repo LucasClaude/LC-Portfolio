@@ -7,6 +7,7 @@ import './App.scss';
 import './css/globalStyles.scss';
 import ApiConstants from './constants/ApiConstants';
 import ScreenContainer from './screenComponents/ScreenContainer';
+import { MainContextProvider } from './context/MainContext';
 
 function App() {
   // const { state } = useContext(MainContext);
@@ -43,14 +44,16 @@ function App() {
   });
 
   return (
-    <ApolloProvider client={client}>
-      <Router>
-        <Routes>
-          <Route path="*" element={<ScreenContainer />} />
-          {/* <PrivateRoute path="/" render={ScreenContainer}/> */}
-        </Routes>
-      </Router>
-    </ApolloProvider>
+    <MainContextProvider>
+      <ApolloProvider client={client}>
+        <Router>
+          <Routes>
+            <Route path="*" element={<ScreenContainer />} />
+            {/* <PrivateRoute path="/" render={ScreenContainer}/> */}
+          </Routes>
+        </Router>
+      </ApolloProvider>
+    </MainContextProvider>
   );
 }
 

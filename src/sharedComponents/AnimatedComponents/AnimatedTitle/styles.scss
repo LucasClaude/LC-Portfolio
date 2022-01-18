@@ -1,0 +1,7 @@
+.animated-title {
+  opacity: 0;
+  display: inline-block;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}

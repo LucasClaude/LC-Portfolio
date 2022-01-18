@@ -1,0 +1,58 @@
+.toggle-button {
+  position: relative;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-bar {
+    z-index: -1;
+    width: 70px;
+  }
+
+  &-toggle {
+    position: absolute;
+    width: 20px;
+    top: 6px;
+    transition: 0.3s ease all;
+    left: 12px;
+
+    &-dark {
+      transform: translateX(0);
+    }
+
+    &-light {
+      transform: translateX(38px);
+    }
+  }
+
+  &-moon {
+    position: absolute;
+    width: 18px;
+    left: 12px;
+    top: 6px;
+    animation: fadeIn 0.5s linear;
+    transform: scaleX(-1);
+  }
+
+  &-sun {
+    position: absolute;
+    width: 20px;
+    right: 11px;
+    top: 6px;
+    animation: fadeIn 0.5s linear;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(startYposition);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(endYposition);
+  }
+}

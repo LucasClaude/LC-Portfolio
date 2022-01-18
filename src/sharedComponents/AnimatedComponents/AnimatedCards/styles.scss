@@ -1,0 +1,35 @@
+.animated-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  // grid-template-rows: 3ch auto minmax(60px, 130px);
+  &-card {
+    // width: clamp
+    width: clamp(400px, 100%, calc(33% - 36px));
+    height: fit-content;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    color: var(--lc-color0);
+    padding: 10px 15px;
+    border-radius: 5px;
+    min-height: 135px;
+    margin-bottom: auto;
+    margin-top: 0;
+
+    &-description {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;  
+      overflow: hidden;
+    }
+    &-active {
+      .animated-cards-card-description {
+        -webkit-line-clamp: unset;
+      }
+    }
+  }
+}

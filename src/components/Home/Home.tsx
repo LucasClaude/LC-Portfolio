@@ -1,41 +1,38 @@
 import React from "react";
 
-import monitorGraphic from "../../assets/monitor-icons-w-table.svg";
+import { SectionWrapper } from "../../sharedComponents";
 import { useHomeInfo } from "../../queries/HomeQueries";
+import AnimatedHeader from "../../sharedComponents/AnimatedComponents/AnimatedHeader/AnimatedHeader";
+import AnimatedTitle from "../../sharedComponents/AnimatedComponents/AnimatedTitle/AnimatedTitle";
+
+import About from "../About/About";
+import Experience from "../Experience/Experience";
+import Projects from "../Projects/Projects";
+import Contact from "../Contact/Contact";
+
 import "./styles.scss";
+
 
 const Home = () => {
   const { info, loading } = useHomeInfo();
   return (
     <div className="home">
-      <div className="home-bio">
-        <div className="home-bio-text">
-          <h1>Lucas Claude</h1>
-          <h3>Software Engineer</h3>
-          {/* <p>Currently a Software Engineer at Haneke Design</p>
-          <p>
-            Florida Southern College Bachelors of Science - Computer Science
-          </p> */}
-        </div>
-        <img
-          className="home-bio-graphic"
-          src={monitorGraphic}
-          alt="monitor-graphic"
-        />
-      </div>
-      <div className="secondary-content">
-        <div className="container">
-          <h2>Technologies &amp; Tools</h2>
-          <div className="technologies">
-            <div className="technologies-cards">React JS</div>
-            <div className="technologies-cards">GraphQL - Apollo Client</div>
-            <div className="technologies-cards">Redux</div>
-            <div className="technologies-cards">{`Unity (C#)`}</div>
-            <div className="technologies-cards">React Native</div>
-            <div className="technologies-cards">Angular</div>
+      <SectionWrapper>
+        <div className="home-bio">
+          <div className="home-bio-text">
+            <AnimatedHeader text="Lucas Claude" delay={0.5}/>
+            <AnimatedTitle text="Software Engineer" delay={2.2}/>
+            {/* <p>Currently a Software Engineer at Haneke Design</p>
+            <p>
+              Florida Southern College Bachelors of Science - Computer Science
+            </p> */}
           </div>
         </div>
-      </div>
+      </SectionWrapper>
+      <About />
+      <Experience />
+      <Projects />
+      <Contact />
     </div>
   );
 };
