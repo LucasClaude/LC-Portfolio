@@ -48,7 +48,7 @@ const Header = () => {
   const headerScroll = useMemo(() => {
     if (!mobileOpen) return `header-${scrolledToTop ? "top" : (scrollDirection || "top")}`;
     else return 'header-top';
-  },[scrollDirection, mobileOpen])
+  },[scrollDirection, mobileOpen]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const onResize = (e: any) => {
     if (e.currentTarget.innerWidth > 768) {

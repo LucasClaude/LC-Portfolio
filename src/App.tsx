@@ -1,5 +1,5 @@
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, from } from '@apollo/client';
-import { BrowserRouter as Router, Route, Routes, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { setContext } from '@apollo/client/link/context';
 import { onError } from '@apollo/client/link/error';
 
