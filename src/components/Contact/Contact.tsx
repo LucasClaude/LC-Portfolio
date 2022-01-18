@@ -55,7 +55,8 @@ const linkIcons = [
     outsideLink: true,
   },
   {
-    link: "",
+    link: "https://www.linkedin.com/in/lucasclaude/",
     children: <LinkedIn className={clsx("linkedin-icon", "contact-icon")} />,
+    outsideLink: true,
   },
 ];
