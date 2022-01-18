@@ -6,7 +6,7 @@ import "./styles.scss";
 const Experience = () => {
   const [selectedExperience, setSelectedExperience] = useState(0);
   return (
-    <SectionWrapper delay={2400}>
+    <SectionWrapper>
       <div className="experience" id="experience">
         <div className="experience-content">
           <h2>2. Experience.</h2>
