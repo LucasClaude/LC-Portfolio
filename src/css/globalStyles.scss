@@ -14,6 +14,7 @@
 
   @include for-tablet {
     --content-padding: 0;
+    --max-content-width: 100vw;
   }
 }
 
@@ -22,11 +23,13 @@ body {
   font-style: normal;
 
   --primary-color: rgb(255, 255, 255);
+  --primary-color-transparent: rgba(39, 57, 78, 0.8);
   --link-color: #4666ab;
   --link-color-light: #4666ab;
   --link-color-dark: white;
   --light-blue: #77abdc;
   --lc-color: #4666ab;
+  --lc-color-transparent: rgba(70, 102, 171, 0.9);
   --tertiary-color: rgb(150, 159, 256);
   --header-color: #27384d;
   --body-text-color: #27384d;
@@ -35,12 +38,23 @@ body {
 
   &.dark {
     --primary-color: rgb(39, 57, 78);
+    --primary-color-transparent: rgba(39, 57, 78, 0.8);
     --link-color: white;
     --lc-color: #4965a1;
     --header-color: white;
     --body-text-color: white;
     --body-text-color-opposite: #27384d;
     --button-background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  &.no-scroll {
+    overflow: hidden;
+    .content > * {
+      filter: blur(2px) brightness(0.7);
+      transition: ease 1s;
+      pointer-events: none;
+      user-select: none;
+    }
   }
 
   color: var(--body-text-color);

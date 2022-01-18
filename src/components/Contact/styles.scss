@@ -1,20 +1,28 @@
 .contact {
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  margin: 20px 0 100px 0;
 
   &-content {
     max-width: var(--max-content-width);
     padding: var(--content-padding);
     width: 100%;
 
+    &-header {
+      text-align: center;
+      font-size: clamp(24px, 2vw, 36px);
+      margin-bottom: 30px;
+    }
+
     &-icons {
       display: flex;
+      justify-content: center;
 
       .contact-icon {
         stroke: var(--body-text-color);
         fill: var(--body-text-color);
         height: 75px;
+        margin: 0 10px;
 
         &:hover {
           fill: var(--tertiary-color) !important;

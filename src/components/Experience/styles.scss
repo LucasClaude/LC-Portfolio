@@ -23,7 +23,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      width: 300px;
+      width: clamp(100px, 300px, 100%);
 
       @include for-tablet {
         display: flex;
@@ -36,7 +36,7 @@
         color: var(--body-text-color);
         border-left: 2px solid var(--body-text-color);
         opacity: 0.5;
-        text-align: left;s
+        text-align: left;
 
         &-active {
           opacity: 1;
@@ -63,6 +63,7 @@
 
       @include for-tablet {
         width: 100%;
+        padding: 0;
       }
     }
   }

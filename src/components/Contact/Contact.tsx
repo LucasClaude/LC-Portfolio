@@ -13,7 +13,7 @@ const Contact = () => {
       <div className="contact" id="contact">
         <div className="contact-content">
           <h2>4. Contact.</h2>
-          <h3>Feel free to reach out</h3>
+          <h3 className="contact-content-header">Feel free to reach out</h3>
           <div className="contact-content-icons">
             {linkIcons?.map(({ children, link, outsideLink = false }, index) =>
               linkWrapper({ children, index, link, outsideLink })

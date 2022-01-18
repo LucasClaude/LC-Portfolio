@@ -1,1 +1,1 @@
-export { ReactComponent as MobielMenuIcon } from './MobileMenuIcon.svg';
+export { ReactComponent as MobileMenuIcon } from './MobileMenuIcon.svg';
