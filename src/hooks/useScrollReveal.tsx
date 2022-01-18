@@ -15,7 +15,7 @@ const useScrollReveal = ({ delay, viewFactor }: scrollRevealTypes = {}) => {
     if (scrollRef?.current) {
       ScrollReveal()?.reveal(scrollRef?.current, srOptions({ delay, viewFactor }));
     }
-  }, []);
+  });
 
   return {
     scrollRef,

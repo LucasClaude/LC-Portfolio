@@ -30,7 +30,7 @@ export const DarkModeToggle = () => {
     if (systemPrefersDark && !theme) {
       setTheme(true);
     }
-  }, [systemPrefersDark]);
+  }, [systemPrefersDark]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const value = useMemo(
     () => (isDark === undefined ? !!systemPrefersDark : isDark),
