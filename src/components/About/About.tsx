@@ -18,7 +18,7 @@ const About = () => {
           <div className="about-me-content-info">
             <h2>1. About Me.</h2>
             <h3>
-              I'm Software Engineer focused on creating quality software and
+              I'm a Software Engineer focused on creating quality software and
               great user interfaces.
             </h3>
             <h4>
